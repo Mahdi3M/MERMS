@@ -51,9 +51,21 @@ body {
     object-fit: cover;
 }
 
-nav.main-menu ul li{      
+.main-menu{
+    width:60%;
+    margin: 0 auto;
+    padding: 0;
+}
+
+nav.main-menu ul{
+    margin: 0;
+    padding: 0;
     list-style: none;
-    padding: 5px 20px;
+}
+
+nav.main-menu ul li{
+    margin: 0;
+    padding: 25px 20px;
     display: inline-block;
     align-items: center;
     font-size: 16px;
@@ -63,6 +75,11 @@ nav.main-menu ul li{
 nav.main-menu ul li a{
     color: #76b852;
     text-decoration: none;
+    display: block;
+}
+
+nav.main-menu ul > li {
+  position: relative;
 }
 
 nav.main-menu ul li.current-list-item > a {
@@ -74,14 +91,7 @@ nav.main-menu li:hover > a {
     color: #555;
 }
 
-.main-menu{
-    width:60%;
-    margin: 0 auto;
-    padding: 15px 0;
-    font-size: 25px;
-}
-
-nav.main-menu ul > li:hover ul {
+nav.main-menu ul > li:hover ul , .sub-menu:hover > ul{
   opacity: 1;
   visibility: visible;
 }
@@ -89,24 +99,24 @@ nav.main-menu ul > li:hover ul {
 nav.main-menu ul ul.sub-menu {
     position: absolute;
     background-color: #fff;
-    width: 220px;
-    padding: 15px 15px;
+    width: 150px;
+    padding: 0;
     margin: 0;
-    left: 0;
-    top: 50px;
+    left: 10px;
+    top: 70px;
     border-radius: 3px;
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
     opacity: 0;
     visibility: hidden;
-    -webkit-box-shadow: 0 0 20px #555555;
-    box-shadow: 0 0 20px #555555;
   }
   
   nav.main-menu ul ul.sub-menu li {
-    display: block;
+    padding: 15px 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.15);
     text-align: left;
+    display: block;
   }
   
   nav.main-menu ul ul.sub-menu li a {
@@ -114,10 +124,6 @@ nav.main-menu ul ul.sub-menu {
     font-weight: 600;
     padding: 7px 10px;
     font-size: 13px;
-  }
-
-  nav.main-menu ul ul.sub-menu li:last-child {
-    float: none !important;
   }
 
 .action {
@@ -158,6 +164,7 @@ nav.main-menu ul ul.sub-menu {
     visibility: hidden;
     opacity: 0;
     z-index:999;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
 }
   
 .action .menu.active {
